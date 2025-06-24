@@ -140,6 +140,7 @@ h1, h2, h3, h4{
 .introduction:hover{
     border-color: rgb(0, 200, 255);
     color: #0065a4;
+    box-shadow: 1px 1px 10px rgb(157, 183, 179);
     transition: all 0.5s;
 }
 .introduction .top{
@@ -286,19 +287,142 @@ h1, h2, h3, h4{
 }
 .content:hover{
     background-color: #e4ffd7;
+    box-shadow: -10px -10px 0 rgb(0, 255, 225);
     transform: scale(0.95);
     transition: all 0.8s;
 }
 .content iframe{
     width: 100%;
 }
-.content img{
+.content img:not(.icon){
+    height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.icon{
+    height: auto;
     width: 98%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hobby-ct{
+    width: 95%;
+    background-color: rgba(255, 235, 221, 0.612);
+    margin: 10px auto 10px auto;
+    padding: 10px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+.hobby-ct:hover{
+    background-color: #f4ffd985;
+    transform: scale(1.025);
+    transition: all 0.6s;
+}
+.hobby-text{
+    width: 65%;
+    margin-left: 0;
+}
+.text-ct h2{
+    text-align: center;
+    transition: all 0.2s;
+}
+.text-ct h2:hover{
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+.hobby-title{
+    width: 50%;
+    margin: 10px auto 30px auto;
+    padding: 15px;
+    text-align: center;
+    background-color: #dbf1ff77;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+.hobby-title:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
+.hobby-img{
+    width: 35%;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.hobby-img img{
+    height: 150px;
+    transition: all 0.3s;
+}
+.hobby-img img:hover{
+    transform: scale(1.055);
+    transition: all 0.6s;
 }
 footer{
     position: fixed;
     bottom: 10px;
     right: 10px;
+}
+
+
+/* レスポンシブデザイン */
+@media screen and (max-width: 768px) {
+  .home-side {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+
+  .home-main {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .main-content, .main-content2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .introduction {
+    width: 90%;
+  }
+
+  .main-ct {
+    width: 90%;
+  }
+
+  .from-img img,
+  .local-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hobby-ct {
+    flex-direction: column;
+  }
+
+  .hobby-text,
+  .hobby-img {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hobby-img img {
+    height: auto;
+    width: 45%;
+    margin: 5px;
+  }
 }
