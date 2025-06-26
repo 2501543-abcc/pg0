@@ -7,6 +7,7 @@ html, body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-family: 'メイリオ', serif;
 }
 body a{
     text-decoration: none;
@@ -58,12 +59,6 @@ h1, h2, h3, h4{
     display: flex;
     flex-wrap: wrap;
 }
-.main-content2{
-    color: rgb(42, 65, 75);
-    margin: 0 10px 0 10px;
-    display: flex;
-    flex-wrap: wrap;
-}
 .main-content .title{
     background-image: url(image/background-4876985_1280.jpg);
     background-size: 100%;
@@ -78,31 +73,23 @@ h1, h2, h3, h4{
     border-bottom-left-radius: 50px;
     transition: all 0.4s;
 }
-.main-content .title2{
-    background-image: url(image/背景３.webp);
-    color: rgb(171, 205, 224);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    padding: 20px;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60%;
-    height: 100px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding-bottom: 10px;
-    transition: all 0.8s;
-}
 .main-content .title:hover{
     transform: scale(1.08);
     transition: all 0.8s;
 }
-.main-content .title2:hover{
-    color: #eeff00;
-    transition: all 0.8s;
+.main-content .fav-title{
+    width: 50%;
+    background-color: #eafff582;
+    margin: 15px auto 50px auto;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+.main-content .fav-title:hover{
+    transform: scale(1.05);
+    transition: all 0.7s;
 }
 .contents{
     width: 95%;
@@ -205,7 +192,7 @@ h1, h2, h3, h4{
 .from-ct h1{
     width: 50%;
     background-color: #eafff582;
-    margin: 0 auto 50px auto;
+    margin: 15px auto 50px auto;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -248,7 +235,7 @@ h1, h2, h3, h4{
 .local-ct h1{
     width: 50%;
     background-color: #eafff582;
-    margin: 0 auto 50px auto;
+    margin: 15px auto 50px auto;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -345,10 +332,10 @@ h1, h2, h3, h4{
 }
 .hobby-title{
     width: 50%;
-    margin: 10px auto 30px auto;
+    margin: 15px auto 30px auto;
     padding: 15px;
     text-align: center;
-    background-color: #dbf1ff77;
+    background-color: #eafff582;
     border-radius: 10px;
     box-sizing: border-box;
     transition: all 0.3s;
@@ -397,10 +384,10 @@ h1, h2, h3, h4{
 }
 .my-title{
     width: 50%;
-    margin: 10px auto 30px auto;
+    margin: 15px auto 30px auto;
     padding: 15px;
     text-align: center;
-    background-color: #dbf1ff77;
+    background-color: #eafff582;
     border-radius: 10px;
     box-sizing: border-box;
     transition: all 0.3s;
@@ -435,7 +422,7 @@ h1, h2, h3, h4{
 .etc-ct h1{
     width: 50%;
     background-color: #eafff582;
-    margin: 0 auto 50px auto;
+    margin: 5px auto 50px auto;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -461,7 +448,9 @@ footer{
 }
 
 
+
 /* レスポンシブデザイン */
+
 @media screen and (max-width: 768px) {
     .home-side {
     position: relative;
@@ -493,14 +482,8 @@ footer{
         width: 90%;
     }
 
-    .from-img img,
-    .local-img img {
-        width: 100%;
-        height: auto;
-    }
-
     .hobby-ct {
-        flex-direction: column;
+        flex-direction: column; /* 縦並びに変更 */
     }
 
     .hobby-text,
@@ -509,10 +492,14 @@ footer{
         text-align: center;
     }
 
-    .hobby-img img {
+    .hobby-img img:not(#anst) {
         height: auto;
-        width: 45%;
+        width: 150px;
         margin: 5px;
+    }
+    #anst{
+        height: 200px;
+        width: auto;
     }
     
     .my-ct {
@@ -528,5 +515,39 @@ footer{
     .my-img img {
         width: 45%;
         height: auto;
+    }
+    .my-img img:hover {
+        transform: scale(1.15);
+    }
+
+    .home-side {
+        position: static; /* 通常のレイアウトに戻す */
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-main {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 60px;
+    }
+
+    .main, .content, .hobby-ct, .hobby-img {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .content {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    iframe {
+        height: 200px;
     }
 }
