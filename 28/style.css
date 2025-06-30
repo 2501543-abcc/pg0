@@ -33,7 +33,7 @@ h1, h2, h3, h4{
     color: rgb(42, 65, 75);
     width: 85%;
     margin-right: 15%;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 .home-side ul{
     list-style: none;
@@ -47,11 +47,13 @@ h1, h2, h3, h4{
     display: inline-block;
     width: 100%;
     transition: all 0.3s;
+    border-radius: 5px;
 }
 .home-side a:hover{
     background-color: rgb(97, 99, 156);
     color: rgb(182, 226, 255);
     transition: all 0.6s;
+    border-radius: 5px;
 }
 .main-content{
     color: rgb(42, 65, 75);
@@ -80,7 +82,7 @@ h1, h2, h3, h4{
 .main-content .fav-title{
     width: 50%;
     background-color: #eafff582;
-    margin: 15px auto 50px auto;
+    margin: 15px auto 0 auto;
     padding: 10px;
     text-align: center;
     border-radius: 10px;
@@ -330,10 +332,16 @@ h1, h2, h3, h4{
     transform: scale(1.2);
     transition: all 0.5s;
 }
+.text-ct p a{
+    color: rgb(46, 170, 89);
+}
+.text-ct p a:hover{
+    text-decoration: underline;
+}
 .hobby-title{
     width: 50%;
     margin: 15px auto 30px auto;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     background-color: #eafff582;
     border-radius: 10px;
@@ -351,10 +359,17 @@ h1, h2, h3, h4{
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.hobby-img img{
+.hobby-img img:not(#you-icon){
     height: 150px;
     margin-top: 5px;
     margin-bottom: 5px;
+    transition: all 0.3s;
+}
+#you-icon{
+    width: 150px;
+    height: auto;
+    margin: 5px;
+    border-radius: 75px;
     transition: all 0.3s;
 }
 .hobby-img img:hover{
@@ -385,7 +400,7 @@ h1, h2, h3, h4{
 .my-title{
     width: 50%;
     margin: 15px auto 30px auto;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     background-color: #eafff582;
     border-radius: 10px;
@@ -441,6 +456,9 @@ h1, h2, h3, h4{
     display: inline;
     color: rgb(41, 67, 90);
 }
+.etc-ct a:hover{
+    text-decoration: underline;
+}
 footer{
     position: fixed;
     bottom: 10px;
@@ -451,12 +469,25 @@ footer{
 
 /* レスポンシブデザイン */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
     .home-side {
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100%;
     height: auto;
     border-radius: 0;
+    }
+
+    .home-side ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .home-side li {
+        margin: 5px;
     }
 
     .home-main {
@@ -467,6 +498,10 @@ footer{
     .main-content, .main-content2 {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .main-content .title{
+        font-size: 25px;
     }
 
     .content {
@@ -484,18 +519,28 @@ footer{
 
     .hobby-ct {
         flex-direction: column; /* 縦並びに変更 */
+        width: 95%;
+        margin: 15px auto;
     }
 
-    .hobby-text,
-    .hobby-img {
+    .hobby-ct p {
+        width: 80%;
+    }
+
+    .hobby-text, .hobby-img {
         width: 100%;
         text-align: center;
     }
 
-    .hobby-img img:not(#anst) {
-        height: auto;
-        width: 150px;
+    .hobby-img img:not(#anst, #you-icon) {
+        height: 220px;
+        width: auto;
         margin: 5px;
+    }
+    #you-icon{
+        width: 150px;
+        height: auto;
+        border-radius: 75px;
     }
     #anst{
         height: 200px;
@@ -506,8 +551,7 @@ footer{
         flex-direction: column;
     }
 
-    .my-text,
-    .my-img {
+    .my-text, .my-img {
         width: 100%;
         text-align: center;
     }
@@ -536,7 +580,7 @@ footer{
         margin-bottom: 60px;
     }
 
-    .main, .content, .hobby-ct, .hobby-img {
+    .main, .content {
         flex-direction: column;
         align-items: center;
         width: 100%;
